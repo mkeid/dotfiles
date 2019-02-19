@@ -7,6 +7,7 @@ colorscheme one
 filetype plugin indent on
 syntax on
 
+
 " If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 " If installed using git
@@ -21,6 +22,8 @@ call vundle#begin()
 
 " Vundle - plugin manager for vim
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'scrooloose/nerdtree'
 map <C-b> :NERDTreeToggle<CR>
@@ -38,4 +41,10 @@ Plugin 'tpope/vim-eunuch'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
+Plugin 'aperezdc/vim-template'
+
+Plugin 'rhysd/vim-clang-format'
+
 call vundle#end()
+
+au BufEnter * :ClangFormatAutoToggle
