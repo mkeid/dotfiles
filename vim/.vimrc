@@ -53,17 +53,20 @@ Plugin 'sjl/gundo.vim' " Show program history
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'aperezdc/vim-template'
 Plugin 'vhdirk/vim-cmake'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'bazelbuild/vim-bazel'
+Plugin 'Raimondi/delimitMate'
 
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'google/vim-colorscheme-primary'
 Plugin 'google/vim-searchindex'
-Plugin 'bazelbuild/vim-bazel'
 
 call vundle#end()
 
