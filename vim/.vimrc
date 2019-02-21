@@ -65,6 +65,10 @@ cnoreabbrev Qall qall
 " Run python on current file
 autocmd FileType python nnoremap <buffer> <Leader>r :exec '!python' shellescape(@%, 1)<cr>
 
+" Switch between buffers
+nnoremap <silent> <Leader>[ :bprev<CR>
+nnoremap <silent> <Leader>] :bnext<CR>
+
 """"""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""
@@ -82,6 +86,7 @@ autocmd FileType cpp setlocal ts=2 sts=2 sw=2
 
 
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
+let g:gtest#gtest_command = "ctest -T test --output-on-failure"
 
 """"""""""""""""""""""""""""
 " Plugins
@@ -93,18 +98,21 @@ call vundle#begin()
 " Vundle - plugin manager for vim
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'sjl/gundo.vim' " Show program history
-Plugin 'itchyny/lightline.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vhdirk/vim-cmake'
-Plugin 'skywind3000/asyncrun.vim'
-Plugin 'junegunn/fzf.vim'
+Plugin 'alepez/vim-gtest'
 Plugin 'bazelbuild/vim-bazel'
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim' " Show program history
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vhdirk/vim-cmake'
+Plugin 'ap/vim-buftabline'
+Plugin 'qpkorr/vim-bufkill'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
