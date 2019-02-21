@@ -1,5 +1,6 @@
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="~/bin:$PATH"
 
 export CLICOLOR=1
 export TERM=xterm-256color
