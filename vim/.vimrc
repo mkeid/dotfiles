@@ -69,6 +69,9 @@ autocmd FileType python nnoremap <buffer> <Leader>r :exec '!python' shellescape(
 nnoremap <silent> <Leader>[ :bprev<CR>
 nnoremap <silent> <Leader>] :bnext<CR>
 
+" Close buffer
+nnoremap <C-C> :bd<CR>
+
 """"""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""
@@ -99,11 +102,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'aitjcize/cppman'
 Plugin 'alepez/vim-gtest'
+Plugin 'ap/vim-buftabline'
 Plugin 'bazelbuild/vim-bazel'
 Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/gundo.vim' " Show program history
@@ -111,8 +117,6 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
-Plugin 'ap/vim-buftabline'
-Plugin 'qpkorr/vim-bufkill'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
