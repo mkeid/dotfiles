@@ -1,19 +1,18 @@
-colorscheme one
+colorscheme gruvbox
 filetype plugin indent on
 syntax on
 
+set visualbell
 set nocompatible
 set t_Co=256
 
 set background=dark
-set cursorline
-hi CursorLine cterm=NONE ctermfg=NONE
 set encoding=utf-8
 set laststatus=2
+set cursorline
 set mouse=a
 set nu
 set tabstop=4
-
 
 
 " If installed using Homebrew
@@ -102,13 +101,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'aitjcize/cppman'
 Plugin 'alepez/vim-gtest'
 Plugin 'ap/vim-buftabline'
 Plugin 'bazelbuild/vim-bazel'
-Plugin 'itchyny/lightline.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'gauteh/vim-cppman'
+Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'myusuf3/numbers.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
@@ -117,11 +117,13 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
+Plugin 'vim-airline/vim-airline'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
 
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
