@@ -84,7 +84,7 @@ autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | e
 
 " Set tab sizes for different file extensions
 autocmd FileType python setlocal ts=4 sts=4 sw=4
-autocmd FileType cpp setlocal ts=2 sts=2 sw=2
+autocmd FileType cpp,cc,h,hpp,proto setlocal ts=2 sts=2 sw=2
 
 
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
@@ -125,10 +125,10 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 
-Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
-Plugin 'google/vim-glaive'
 Plugin 'google/vim-colorscheme-primary'
+Plugin 'google/vim-glaive'
+Plugin 'google/vim-maktaba'
 Plugin 'google/vim-searchindex'
 
 call vundle#end()
