@@ -1,9 +1,9 @@
 def FlagsForFile(filename, **kwargs):
     return {
         'flags': [
-            '-Wall', '-Wextra', '-Werror', '-std=c++14'
-            '-I', '/usr/local/include', '-I', '/usr/local/include/gtest',
-            '-isystem',
+            '-std=c++1y', '-Wall', '-Wextra', '-Werror', '-I',
+            '/usr/local/include', '-I', '/usr/local/include/gtest', '-isystem',
+            '-I', '-I./include',
             '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1',
             '-isystem',
             '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include',
