@@ -1,24 +1,18 @@
-colorscheme gruvbox
+colorscheme dracula
 filetype plugin indent on
 syntax on
 
-set visualbell
-set nocompatible
-set t_Co=256
-
 set background=dark
+set belloff=all
+set cursorline
 set encoding=utf-8
 set laststatus=2
-set cursorline
 set mouse=a
+set nocompatible
 set nu
-set tabstop=4
-
-
-" If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
-" If installed using git
-" set rtp+=~/.fzf
+set t_Co=256
+set tabstop=4
 
 """"""""""""""""""""""""""""
 " Mappings
@@ -86,9 +80,9 @@ autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | e
 autocmd FileType python setlocal ts=4 sts=4 sw=4
 autocmd FileType cpp,cc,h,hpp,proto setlocal ts=2 sts=2 sw=2
 
-
-let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:gtest#gtest_command = "ctest -T test --output-on-failure"
+let g:airline_theme='onedark'
 
 """"""""""""""""""""""""""""
 " Plugins
@@ -106,10 +100,10 @@ Plugin 'ap/vim-buftabline'
 Plugin 'bazelbuild/vim-bazel'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'gauteh/vim-cppman'
-Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
@@ -119,6 +113,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
