@@ -80,7 +80,11 @@ autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | e
 autocmd FileType python setlocal ts=4 sts=4 sw=4
 autocmd FileType cpp,cc,h,hpp,proto setlocal ts=2 sts=2 sw=2
 
+" YCM settings
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 let g:gtest#gtest_command = "ctest -T test --output-on-failure"
 let g:airline_theme='onedark'
 
