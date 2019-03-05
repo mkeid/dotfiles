@@ -5,23 +5,17 @@ import logging
 import ycm_core
 import re
 
-get_include_flags = lambda: add_flags_to_dirs(get_include_subdirs())
-get_include_subdirs = lambda: [
-    d[0] for d in os.walk('.') if d[0].split('/')[-1] == 'include'
-]
-add_flags_to_dirs = lambda dirs: ['-I' + dir for dir in dirs]
-
 C_BASE_FLAGS = [
     '-Wall', '-Wextra', '-Werror', '-Wno-long-long', '-Wno-variadic-macros',
     '-fexceptions', '-ferror-limit=10000', '-DNDEBUG', '-std=c11',
     '-I/usr/lib/', '-I/usr/include/'
-] + get_include_flags()
+]
 
 CPP_BASE_FLAGS = [
     '-Wall', '-Wextra', '-Wno-long-long', '-Wno-variadic-macros',
     '-fexceptions', '-ferror-limit=10000', '-DNDEBUG', '-std=c++1z', '-xc++',
     '-I/usr/lib/', '-I/usr/include/'
-] + get_include_flags()
+]
 
 C_SOURCE_EXTENSIONS = ['.c']
 
