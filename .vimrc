@@ -21,6 +21,12 @@ set tabstop=4
 map <C-b> :NERDTreeToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
+" Unmap arrow keys
+no <left> <Nop>
+no <down> <Nop>
+no <up> <Nop>
+no <right> <Nop>
+
 " fzf mappings
 nnoremap <C-_> :History:<CR>
 nnoremap <silent> <Leader>F :Files<CR>
