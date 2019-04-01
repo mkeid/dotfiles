@@ -5,34 +5,19 @@ import logging
 import ycm_core
 import re
 
-C_BASE_FLAGS = [
+BASE_FLAGS = [
     '-Wall', '-Wextra', '-Werror', '-Wno-long-long', '-Wno-variadic-macros',
-    '-fexceptions', '-ferror-limit=10000', '-DNDEBUG', '-std=c11',
+    '-fexceptions', '-ferror-limit=10000', '-DNDEBUG', '-std=c++17', '-xc++',
     '-I/usr/lib/', '-I/usr/include/'
 ]
 
-CPP_BASE_FLAGS = [
-    '-Wall', '-Wextra', '-Wno-long-long', '-Wno-variadic-macros',
-    '-fexceptions', '-ferror-limit=10000', '-DNDEBUG', '-std=c++1z', '-xc++',
-    '-I/usr/lib/', '-I/usr/include/'
-]
-
-C_SOURCE_EXTENSIONS = ['.c']
-
-CPP_SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.m', '.mm']
+SOURCE_EXTENSIONS = ['.cpp', '.cxx', '.cc', '.c', '.m', '.mm']
 
 SOURCE_DIRECTORIES = ['src', 'lib']
 
 HEADER_EXTENSIONS = ['.h', '.hxx', '.hpp', '.hh']
 
 HEADER_DIRECTORIES = ['include']
-
-BUILD_DIRECTORY = 'build'
-
-
-def IsSourceFile(filename):
-    extension = os.path.splitext(filename)[1]
-    return extension in C_SOURCE_EXTENSIONS + CPP_SOURCE_EXTENSIONS
 
 
 def IsHeaderFile(filename):
@@ -43,7 +28,7 @@ def IsHeaderFile(filename):
 def GetCompilationInfoForFile(database, filename):
     if IsHeaderFile(filename):
         basename = os.path.splitext(filename)[0]
-        for extension in C_SOURCE_EXTENSIONS + CPP_SOURCE_EXTENSIONS:
+        for extension in SOURCE_EXTENSIONS:
             # Get info from the source files by replacing the extension.
             replacement_file = basename + extension
             if os.path.exists(replacement_file):
@@ -64,7 +49,7 @@ def GetCompilationInfoForFile(database, filename):
     return database.GetCompilationInfoForFile(filename)
 
 
-def FindNearest(path, target, build_folder=None):
+def FindNearest(path, target, build_folder):
     candidate = os.path.join(path, target)
     if (os.path.isfile(candidate) or os.path.isdir(candidate)):
         logging.info("Found nearest " + target + " at " + candidate)
@@ -141,7 +126,7 @@ def FlagsForCompilationDatabase(root, filename):
         # Last argument of next function is the name of the build folder for
         # out of source projects
         compilation_db_path = FindNearest(root, 'compile_commands.json',
-                                          BUILD_DIRECTORY)
+                                          'build')
         compilation_db_dir = os.path.dirname(compilation_db_path)
         logging.info("Set compilation database directory to " +
                      compilation_db_dir)
@@ -167,13 +152,7 @@ def FlagsForFile(filename):
     if compilation_db_flags:
         final_flags = compilation_db_flags
     else:
-        if IsSourceFile(filename):
-            extension = os.path.splitext(filename)[1]
-            if extension in C_SOURCE_EXTENSIONS:
-                final_flags = C_BASE_FLAGS
-            else:
-                final_flags = CPP_BASE_FLAGS
-
+        final_flags = BASE_FLAGS
         clang_flags = FlagsForClangComplete(root)
         if clang_flags:
             final_flags = final_flags + clang_flags

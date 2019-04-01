@@ -21,12 +21,6 @@ set tabstop=4
 map <C-b> :NERDTreeToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
-" Unmap arrow keys
-no <left> <Nop>
-no <down> <Nop>
-no <up> <Nop>
-no <right> <Nop>
-
 " fzf mappings
 nnoremap <C-_> :History:<CR>
 nnoremap <silent> <Leader>F :Files<CR>
@@ -91,7 +85,6 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-let g:gtest#gtest_command = "ctest -T test --output-on-failure"
 let g:airline_theme='onedark'
 
 """"""""""""""""""""""""""""
@@ -105,7 +98,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'alepez/vim-gtest'
 Plugin 'ap/vim-buftabline'
 Plugin 'bazelbuild/vim-bazel'
 Plugin 'flazz/vim-colorschemes'
